@@ -1,10 +1,15 @@
 function hasSpecialChar(password) {
-  const specialChars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
-  return specialChars.test(password);
+  const special_chars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+  return special_chars.test(password);
 }
 
 function checkPasswordLength(password) {
   return password.length >= 8;
+}
+
+function chechUpperCase(password) {
+  const upperCaseRegExp = /[A-Z]/;
+  return upperCaseRegExp.test(password);
 }
 
 function validatePassword(password) {
@@ -12,10 +17,12 @@ function validatePassword(password) {
     alert("Password should contain minimum of 8 characters");
   }
 
-  if (hasSpecialChar(password)) {
-    alert("all good");
-  } else {
+  if (!hasSpecialChar(password)) {
     alert("Password should contain minimum of 1 special characters");
+  }
+
+  if (!chechUpperCase(password)) {
+    alert("Password should contain minimum of 1 upperCase");
   }
 }
 
