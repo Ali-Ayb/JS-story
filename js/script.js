@@ -1,3 +1,5 @@
+//Password validataion functions
+
 function hasSpecialChar(password) {
   const special_chars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
   return special_chars.test(password);
@@ -30,6 +32,8 @@ function validatePassword(password) {
   }
 }
 
+//Email valdiataion functions
+
 function checkEmailFormat(email) {
   const email_reg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return email_reg.test(email);
@@ -52,6 +56,20 @@ function validateEmail(email) {
 function validateRegisterForm(email, password) {
   validateEmail(email);
   validatePassword(password);
+}
+
+function calculateAge(birth_date) {
+  const today = new Date();
+  const birth_obj = new Date(birth_date);
+  let age = today.getFullYear() - birth_obj.getFullYear();
+  const monthDiff = today.getMonth() - birth_obj.getMonth();
+  if (
+    monthDiff < 0 ||
+    (monthDiff === 0 && today.getDate() < birth_obj.getDate())
+  ) {
+    age--;
+  }
+  return age;
 }
 
 const form = document.querySelector(".register-form");
@@ -81,7 +99,16 @@ form.addEventListener("submit", function (event) {
     birth_date: birth_date,
     gender: gender,
   };
-  jason_data = JSON.stringify(data);
+
+  json_data = JSON.stringify(data);
+  parsed_json_data = JSON.parse(json_data);
+
+  if (calculateAge(parsed_json_data.birth_date) > 30) {
+    window.location.href = "../pages/old.html";
+  } else {
+    window.location.href = "../pages/young.html";
+  }
+
   console.log(jason_data);
   console.log(data);
 });
