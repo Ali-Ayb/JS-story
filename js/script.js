@@ -13,16 +13,20 @@ function chechUpperCase(password) {
 }
 
 function validatePassword(password) {
+  let message = "";
   if (!checkPasswordLength(password)) {
-    alert("Password should contain minimum of 8 characters");
+    message = "Password should contain minimum of 8 characters\n";
   }
 
   if (!hasSpecialChar(password)) {
-    alert("Password should contain minimum of 1 special characters");
+    message += "Password should contain minimum of 1 special characters\n";
   }
 
   if (!chechUpperCase(password)) {
-    alert("Password should contain minimum of 1 upperCase");
+    message += "Password should contain minimum of 1 upperCase\n";
+  }
+  if (message !== "") {
+    alert(message);
   }
 }
 
@@ -51,6 +55,6 @@ form.addEventListener("submit", function (event) {
   let password = document.getElementById("password").value;
   let email = document.getElementById("email").value;
   validateEmail(email);
-  // validatePassword(password);
+  validatePassword(password);
   console.log("Form submitted!");
 });
