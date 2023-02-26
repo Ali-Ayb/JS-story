@@ -1,5 +1,4 @@
 //Password validataion functions
-
 function hasSpecialChar(password) {
   const special_chars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
   return special_chars.test(password);
@@ -80,7 +79,6 @@ function calculateAge(birth_date) {
 }
 
 const form = document.querySelector(".register-form");
-
 form.addEventListener("submit", function (event) {
   console.log("test");
   event.preventDefault();
@@ -107,7 +105,7 @@ form.addEventListener("submit", function (event) {
     gender: gender,
   };
 
-  json_data = JSON.stringify(data);
+  let json_data = JSON.stringify(data);
   parsed_json_data = JSON.parse(json_data);
 
   if (calculateAge(parsed_json_data.birth_date) > 30) {
