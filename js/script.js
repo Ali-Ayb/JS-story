@@ -28,14 +28,20 @@ function validatePassword(password) {
 
 function checkEmailFormat(email) {
   const email_reg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  console.log("heyyyyyy");
-  alert("stop");
   return email_reg.test(email);
+}
+
+function checkEmailDashes(email) {
+  const has_dashes = email.indexOf("-") == -1;
+  return has_dashes;
 }
 
 function validateEmail(email) {
   if (!checkEmailFormat(email)) {
     alert("Invalid email address");
+  }
+  if (!checkEmailDashes(email)) {
+    alert("email address should not contain dashes(-)");
   }
 }
 

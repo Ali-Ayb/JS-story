@@ -1,0 +1,60 @@
+body {
+  background-color: #537fe7;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.register-container {
+  border-radius: 40px;
+  background-color: #c0eef2;
+  height: 55%;
+  width: 30%;
+}
+
+.register-title {
+  margin-top: 10%;
+  margin-left: 28%;
+}
+
+.register-buttom {
+  margin-left: 30%;
+  background-color: #537fe7;
+}
+
+.register-form {
+  margin-top: 15%;
+  margin-left: 15%;
+}
+
+.register-link {
+  margin: 0;
+  padding: 0;
+  margin-top: 10%;
+}
+
+a {
+  color: #537fe7;
+}
+
+@media only screen and (max-width: 600px) {
+  .register-container {
+    border-radius: 40px;
+    background-color: #c0eef2;
+    height: 55%;
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
+  .register-container {
+    border-radius: 40px;
+    background-color: #c0eef2;
+    height: 55%;
+    width: 50%;
+  }
+}
