@@ -7,7 +7,7 @@ function checkPasswordLength(password) {
   return password.length >= 8;
 }
 
-function checkPassword(password) {
+function validatePassword(password) {
   if (!checkPasswordLength(password)) {
     alert("Password should contain minimum of 8 characters");
   }
@@ -23,6 +23,6 @@ const form = document.querySelector("form");
 
 form.addEventListener("submit", function (event) {
   let password = document.getElementById("password").value;
-  checkPassword(password);
+  validatePassword(password);
   console.log("Form submitted!");
 });
