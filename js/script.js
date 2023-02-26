@@ -49,6 +49,11 @@ function validateEmail(email) {
   }
 }
 
+function validateForm(email, password) {
+  validateEmail(email);
+  validatePassword(password);
+}
+
 const form = document.querySelector("form");
 
 form.addEventListener("submit", function (event) {
