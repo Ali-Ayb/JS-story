@@ -57,22 +57,26 @@ function mergeSort(arr, l, r) {
 // sorted_list.textContent = `sorted numbers: ${numbers}`;
 // document.body.appendChild(sorted_list);
 
-const word = prompt("Please enter a word:");
+const palindrome_button = document.getElementById("palindrome");
 
-function isPalindrome(str) {
-  if (str[0] !== str[str.length - 1]) {
-    return false;
+palindrome_button.addEventListener("click", function () {
+  const word = prompt("Please enter a word:");
+
+  function isPalindrome(str) {
+    if (str[0] !== str[str.length - 1]) {
+      return false;
+    }
+    if (str.length <= 1) {
+      return true;
+    }
+    return isPalindrome(str.slice(1, -1));
   }
-  if (str.length <= 1) {
-    return true;
-  }
-  return isPalindrome(str.slice(1, -1));
-}
 
-const result = isPalindrome(word);
+  const result = isPalindrome(word);
 
-const palindrome_result = document.createElement("h1");
-palindrome_result.textContent = `"${word}" ${
-  result ? "is" : "is not"
-} a palindrome`;
-document.body.appendChild(palindrome_result);
+  const palindrome_result = document.createElement("h1");
+  palindrome_result.textContent = `"${word}" ${
+    result ? "is" : "is not"
+  } a palindrome`;
+  document.body.appendChild(palindrome_result);
+});
