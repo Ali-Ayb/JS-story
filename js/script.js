@@ -106,14 +106,21 @@ form.addEventListener("submit", function (event) {
   };
 
   let json_data = JSON.stringify(data);
-  parsed_json_data = JSON.parse(json_data);
-
-  if (calculateAge(parsed_json_data.birth_date) > 30) {
+  let parsed_json_data = JSON.parse(json_data);
+  let age = calculateAge(parsed_json_data.birth_date);
+  if (age > 30) {
+    if (isPrime(age)) {
+      alert(`you are old and btw your ${age} is prime number :) `);
+    } else {
+      alert(`you are old but your ${age} is not prime :( )`);
+    }
     window.location.href = "../pages/old.html";
   } else {
+    if (isPrime(age)) {
+      alert(`you are young and btw your ${age} is prime number :) `);
+    } else {
+      alert(`you are young but your ${age} is not prime :( )`);
+    }
     window.location.href = "../pages/young.html";
   }
-
-  console.log(jason_data);
-  console.log(data);
 });
