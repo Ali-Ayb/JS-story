@@ -12,14 +12,14 @@ body {
 .register-container {
   border-radius: 40px;
   background-color: #c0eef2;
-  height: 55%;
+  height: 82%;
   width: 30%;
   padding: 20px;
   box-sizing: border-box;
 }
 
 .register-title {
-  margin-top: 10%;
+  margin-top: 5%;
   text-align: center;
 }
 
@@ -62,12 +62,23 @@ a {
   color: #537fe7;
 }
 
+.gender {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.gender label {
+  margin-right: 10px;
+}
+
 @media only screen and (max-width: 600px) {
   .register-container {
     border-radius: 40px;
     background-color: #c0eef2;
-    height: 55%;
+    height: 70%;
     width: 70%;
+    margin-bottom: 30%;
   }
 }
 
@@ -75,7 +86,7 @@ a {
   .register-container {
     border-radius: 40px;
     background-color: #c0eef2;
-    height: 55%;
+    height: 70%;
     width: 50%;
   }
 }
