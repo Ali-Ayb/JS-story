@@ -3,8 +3,12 @@ function hasSpecialChar(password) {
   return specialChars.test(password);
 }
 
+function checkPasswordLength(password) {
+  return password.length >= 8;
+}
+
 function checkPassword(password) {
-  if (password.length < 8) {
+  if (!checkPasswordLength(password)) {
     alert("Password should contain minimum of 8 characters");
   }
 
