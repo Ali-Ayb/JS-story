@@ -1,10 +1,3 @@
-let numbers = [];
-// alert("Hello old but gold \nlets get started with some fun games old man");
-// for (let i = 0; i < 10; i++) {
-//   const input = prompt(`Enter 10 numbers ${i + 1}:`);
-//   numbers.push(parseInt(input));
-// }
-
 function merge(arr, l, m, r) {
   var n1 = m - l + 1;
   var n2 = r - m;
@@ -47,16 +40,26 @@ function mergeSort(arr, l, r) {
   merge(arr, l, m, r);
 }
 
-// const unsorted_list = document.createElement("h1");
-// unsorted_list.textContent = `unsorted numbers: ${numbers}`;
-// document.body.appendChild(unsorted_list);
+let numbers = [];
+alert("Hello old but gold \nlets get started with some fun games old man");
 
-// mergeSort(numbers, 0, numbers.length - 1);
+let number = document.getElementById("number");
+number.addEventListener("click", function () {
+  for (let i = 0; i < 10; i++) {
+    const input = prompt(`Enter 10 numbers ${i + 1}:`);
+    numbers.push(parseInt(input));
+  }
 
-// const sorted_list = document.createElement("h1");
-// sorted_list.textContent = `sorted numbers: ${numbers}`;
-// document.body.appendChild(sorted_list);
+  const unsorted_list = document.createElement("h1");
+  unsorted_list.textContent = `unsorted numbers: ${numbers}`;
+  document.body.appendChild(unsorted_list);
 
+  mergeSort(numbers, 0, numbers.length - 1);
+
+  const sorted_list = document.createElement("h1");
+  sorted_list.textContent = `sorted numbers: ${numbers}`;
+  document.body.appendChild(sorted_list);
+});
 const palindrome_button = document.getElementById("palindrome");
 
 palindrome_button.addEventListener("click", function () {

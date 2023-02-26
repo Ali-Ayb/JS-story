@@ -2,7 +2,25 @@ body {
   background-color: #537fe7;
 }
 
+.container {
+  display: flex;
+  justify-content: space-between;
+}
 .palindrome {
+  padding: 15px;
+  font-size: 24px;
+}
+
+.title {
+  text-align: center;
+}
+
+.number {
+  padding: 15px;
+  font-size: 24px;
+}
+
+.course {
   padding: 15px;
   font-size: 24px;
 }
