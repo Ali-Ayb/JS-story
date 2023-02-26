@@ -8,8 +8,8 @@ function checkPasswordLength(password) {
 }
 
 function chechUpperCase(password) {
-  const upperCaseRegExp = /[A-Z]/;
-  return upperCaseRegExp.test(password);
+  const upper_case_reg = /[A-Z]/;
+  return upper_case_reg.test(password);
 }
 
 function validatePassword(password) {
@@ -26,10 +26,25 @@ function validatePassword(password) {
   }
 }
 
+function checkEmailFormat(email) {
+  const email_reg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  console.log("heyyyyyy");
+  alert("stop");
+  return email_reg.test(email);
+}
+
+function validateEmail(email) {
+  if (!checkEmailFormat(email)) {
+    alert("Invalid email address");
+  }
+}
+
 const form = document.querySelector("form");
 
 form.addEventListener("submit", function (event) {
   let password = document.getElementById("password").value;
-  validatePassword(password);
+  let email = document.getElementById("email").value;
+  validateEmail(email);
+  // validatePassword(password);
   console.log("Form submitted!");
 });
