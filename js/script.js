@@ -49,17 +49,39 @@ function validateEmail(email) {
   }
 }
 
-function validateForm(email, password) {
+function validateRegisterForm(email, password) {
   validateEmail(email);
   validatePassword(password);
 }
 
-const form = document.querySelector("form");
+const form = document.querySelector(".register-form");
 
 form.addEventListener("submit", function (event) {
-  let password = document.getElementById("password").value;
+  console.log("test");
+  event.preventDefault();
+
   let email = document.getElementById("email").value;
-  validateEmail(email);
-  validatePassword(password);
-  console.log("Form submitted!");
+  let password = document.getElementById("password").value;
+  let phone_number = document.getElementById("phone_number").value;
+  let birth_date = document.getElementById("birth_date").value;
+  let male = document.getElementById("male");
+  let female = document.getElementById("female");
+  let gender;
+
+  if (male.checked) {
+    gender = male.value;
+  } else if (female.checked) {
+    gender = female.value;
+  }
+
+  const data = {
+    email: email,
+    password: password,
+    phone_number: phone_number,
+    birth_date: birth_date,
+    gender: gender,
+  };
+  jason_data = JSON.stringify(data);
+  console.log(jason_data);
+  console.log(data);
 });
