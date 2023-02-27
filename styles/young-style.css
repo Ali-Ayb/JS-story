@@ -1,6 +1,7 @@
 body {
   background-color: #537fe7;
   font-family: Arial, Helvetica, sans-serif;
+  height: 1000px;
 }
 .container {
   display: flex;
