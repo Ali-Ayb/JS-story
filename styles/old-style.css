@@ -6,21 +6,15 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.palindrome {
+
+.palindrome,
+.number,
+.course,
+.reverse {
   padding: 15px;
   font-size: 24px;
 }
 
 .title {
   text-align: center;
-}
-
-.number {
-  padding: 15px;
-  font-size: 24px;
-}
-
-.course {
-  padding: 15px;
-  font-size: 24px;
 }

@@ -104,8 +104,33 @@ course.addEventListener("click", function () {
 
   const course_obj = new Course(name, code, instructor, room);
 
-  const new_course = document.createElement("p");
+  const new_course = document.createElement("h2");
   new_course.textContent = `Course details: course Name: ${course_obj.name} course code: 
   ${course_obj.code} Instructor Name: ${course_obj.instructor} room Name: ${course_obj.room} `;
   document.body.appendChild(new_course);
+});
+
+let reverse = document.getElementById("reverse");
+
+reverse.addEventListener("click", function () {
+  const original_string = prompt("Enter a string:");
+
+  const chars = original_string.split("");
+
+  const numbers = chars.filter((char) => /[0-9]/.test(char));
+
+  numbers.reverse();
+
+  for (let i = 0, j = 0; i < chars.length && j < numbers.length; i++) {
+    if (/[0-9]/.test(chars[i])) {
+      chars[i] = numbers[j];
+      j++;
+    }
+  }
+
+  const reversedString = chars.join("");
+
+  const reversed = document.createElement("h1");
+  reversed.textContent = `original string: ${original_string} reversed string: ${reversedString}`;
+  document.body.appendChild(reversed);
 });
