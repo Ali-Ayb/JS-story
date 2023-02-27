@@ -72,3 +72,21 @@ button.addEventListener("click", () => {
     longText.innerText = long.toFixed(2);
   });
 });
+
+let scroll = document.getElementById("scroll");
+scroll.addEventListener("click", function () {
+  const targetSection = document.createElement("section");
+  targetSection.id = "target-section";
+  targetSection.style.height = "1000px";
+  document.body.appendChild(targetSection);
+
+  window.addEventListener("scroll", function () {
+    const targetTop = targetSection.getBoundingClientRect().top;
+    const targetBottom = targetSection.getBoundingClientRect().bottom;
+    const windowHeight = window.innerHeight;
+
+    if (targetTop < windowHeight && targetBottom > 0) {
+      alert("You have scrolled to the target section!");
+    }
+  });
+});
