@@ -21,3 +21,29 @@ constants.addEventListener("click", function () {
   constant.textContent = `original string: ${input_string} modified string: ${output_string}`;
   document.body.appendChild(constant);
 });
+
+let animation = document.getElementById("animation");
+animation.addEventListener("click", function () {
+  const box = document.querySelector(".box");
+  let position = 0;
+
+  function moveBox() {
+    position += 1;
+    box.style.transform = `translateX(${position}px)`;
+    if (position < 100) {
+      requestAnimationFrame(moveBox);
+    }
+  }
+
+  requestAnimationFrame(moveBox);
+});
+
+let hacker = document.getElementById("hacker");
+animation.addEventListener("click", function () {
+  fetch("https://ipapi.co/json/")
+    .then((response) => response.json())
+    .then((data) => {
+      const ipAddress = data.ip;
+      console.log(`IP address: ${ipAddress}`);
+    });
+});
