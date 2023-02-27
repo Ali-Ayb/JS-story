@@ -44,8 +44,31 @@ hacker.addEventListener("click", function () {
     .then((response) => response.json())
     .then((data) => {
       const ipAddress = data.ip;
+      let num = ipAddress.split(".");
+
+      let sum = 0;
+      for (let i = 0; i < num.length; i++) {
+        for (let j = 0; j < num[i].length; j++) {
+          let digit = parseInt(num[i][j]);
+          sum += digit;
+        }
+      }
       const ip_address = document.createElement("h1");
-      ip_address.textContent = `IP address: ${ipAddress}`;
+      ip_address.textContent = `IP address: ${ipAddress} and the sum is ${sum}`;
       document.body.appendChild(ip_address);
     });
+});
+
+let button = document.getElementById("get-location");
+let latText = document.getElementById("latitude");
+let longText = document.getElementById("longitude");
+
+button.addEventListener("click", () => {
+  navigator.geolocation.getCurrentPosition((position) => {
+    let lat = position.coords.latitude;
+    let long = position.coords.longitude;
+
+    latText.innerText = lat.toFixed(2);
+    longText.innerText = long.toFixed(2);
+  });
 });
