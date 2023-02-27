@@ -39,11 +39,13 @@ animation.addEventListener("click", function () {
 });
 
 let hacker = document.getElementById("hacker");
-animation.addEventListener("click", function () {
+hacker.addEventListener("click", function () {
   fetch("https://ipapi.co/json/")
     .then((response) => response.json())
     .then((data) => {
       const ipAddress = data.ip;
-      console.log(`IP address: ${ipAddress}`);
+      const ip_address = document.createElement("h1");
+      ip_address.textContent = `IP address: ${ipAddress}`;
+      document.body.appendChild(ip_address);
     });
 });
