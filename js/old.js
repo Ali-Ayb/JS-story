@@ -60,6 +60,7 @@ number.addEventListener("click", function () {
   sorted_list.textContent = `sorted numbers: ${numbers}`;
   document.body.appendChild(sorted_list);
 });
+
 const palindrome_button = document.getElementById("palindrome");
 
 palindrome_button.addEventListener("click", function () {
@@ -82,4 +83,29 @@ palindrome_button.addEventListener("click", function () {
     result ? "is" : "is not"
   } a palindrome`;
   document.body.appendChild(palindrome_result);
+});
+
+const course = document.getElementById("course");
+
+course.addEventListener("click", function () {
+  class Course {
+    constructor(name, code, instructor, room) {
+      this.name = name;
+      this.code = code;
+      this.instructor = instructor;
+      this.room = room;
+    }
+  }
+
+  const name = prompt("Enter course name:");
+  const code = prompt("Enter course code:");
+  const instructor = prompt("Enter course instructor:");
+  const room = prompt("Enter course room:");
+
+  const course_obj = new Course(name, code, instructor, room);
+
+  const new_course = document.createElement("p");
+  new_course.textContent = `Course details: course Name: ${course_obj.name} course code: 
+  ${course_obj.code} Instructor Name: ${course_obj.instructor} room Name: ${course_obj.room} `;
+  document.body.appendChild(new_course);
 });
